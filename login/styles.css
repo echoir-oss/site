@@ -10,7 +10,6 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: 'Host Grotesk', 'Instrument Sans', Arial, sans-serif;
     background-color: #252525;
     color: white;
     overflow: hidden;
@@ -43,6 +42,7 @@ body {
     align-items: center;
     max-width: 562px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .echoir-logo {
@@ -54,11 +54,12 @@ body {
     color: #D3D3D3;
     font-size: 27px;
     padding-bottom: 14px;
+    text-align: center;
 }
 
 .input-text {
-    width: 400px;
-    height: 50px;
+    width: 100%;
+    max-width: 400px;
     padding: 15px;
     color: #ffffff50;
     font-size: 18px;
@@ -74,7 +75,8 @@ body {
     border: none;
     border: 3px solid #E400A0;
     color: white;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     border-radius: 6px;
     font-size: 18px;
     background-color: #C20088;
@@ -87,4 +89,38 @@ body {
 .link-acc {
     color: #FF74D5;
     text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar-shapes {
+        display: none;
+    }
+
+    .content-wrapper {
+        height: auto;
+        flex: 1 1 auto;
+        padding: 20px;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .subheading {
+        font-size: 22px;
+    }
+
+    .input-text {
+        font-size: 16px;
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .login-button {
+        max-width: 100%;
+    }
 }
