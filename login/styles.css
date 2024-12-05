@@ -1,22 +1,22 @@
-* {
+*{
     margin: 0;
     padding: 0;
-    font-family: 'Host Grotesk', 'Instrument Sans', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #252525;
-    color: white;
+    background-color: #161616;
+    color: #fff;
+    font-family: 'Host Grotesk', 'Instrument Sans', Arial, sans-serif;
     overflow: hidden;
 }
 
+
 .sidebar-shapes {
-    flex: 0 0 auto;
+    flex-shrink: 0;
     position: relative;
     z-index: 1000;
     pointer-events: none;
@@ -29,10 +29,11 @@ body {
 }
 
 .content-wrapper {
-    flex: 1 1 auto;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     height: 100vh;
 }
 
@@ -41,8 +42,9 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 562px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
+    margin: 0 auto;
 }
 
 .echoir-logo {
@@ -53,33 +55,38 @@ body {
 .subheading {
     color: #D3D3D3;
     font-size: 27px;
-    padding-bottom: 14px;
     text-align: center;
+    padding-bottom: 14px;
 }
 
 .input-text {
     width: 100%;
     max-width: 400px;
     padding: 15px;
-    color: #ffffff50;
+    color: rgba(255, 255, 255, 0.5);
     font-size: 18px;
     border: none;
-    border-radius: 4px;
-    border-bottom: solid 3px #FF3CC4;
-    background-color: #333333;
+    border-radius: 7px;
+    border-bottom: 3px solid #FF3CC4;
+    background-color: #333;
     margin-bottom: 14px;
 }
 
 .login-button {
-    padding: 10px;
-    border: none;
-    border: 3px solid #E400A0;
-    color: white;
     width: 100%;
     max-width: 200px;
-    border-radius: 6px;
+    padding: 11.5px;
     font-size: 18px;
+    background-color: #E400A0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-button:hover {
     background-color: #C20088;
+    transition: background-color 0.3s ease;
 }
 
 .make-acc-link {
@@ -101,9 +108,8 @@ body {
     }
 
     .content-wrapper {
-        height: auto;
-        flex: 1 1 auto;
         padding: 20px;
+        flex-direction: column;
     }
 
     .content {
@@ -116,8 +122,6 @@ body {
 
     .input-text {
         font-size: 16px;
-        padding: 15px;
-        max-width: 100%;
     }
 
     .login-button {
