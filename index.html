@@ -1,27 +1,54 @@
-<!-- placeholder page until i make the new one :3 -->
-
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Echoir is a chat application made for people, not for profit.">
-        <meta name="author" content="Echoir">
-        <meta name="keywords" content="Echoir, chat, app">
-        <meta property="og:image" content="https://echoir.fr/shared/favicon-light.png">
-        <meta property="og:image:alt" content="Echoir Logo">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Welcome to Echoir!">
-        <meta property="og:description" content="Echoir is a chat application made for people, not for profit.">
-        <meta property="og:url" content="https://echoir.fr">
-        <meta name="theme-color" content="#252525">
-		<link rel="icon" href="https://echoir.fr/shared/favicon-dark.png" media="(prefers-color-scheme: light)">
-        <link rel="icon" href="https://echoir.fr/shared/favicon-light.png" media="(prefers-color-scheme: dark)">
-		<title>Echoir Placeholder Page</title>
-		<link rel="stylesheet" href="/shared/style.css">
-	</head>
-	<body>
-		<h1>Welcome to Echoir!</h1>
-		<a href="https://echoir.fr/login/">Login</a>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Echoir is a chat application made for people, not for profit.">
+    <meta name="author" content="Echoir">
+    <meta name="keywords" content="Echoir, chat, app">
+    <meta property="og:image" content="https://echoir.fr/shared/favicon-light.png">
+    <meta property="og:image:alt" content="Echoir Logo">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Welcome to Echoir!">
+    <meta property="og:description" content="Echoir is a chat application made for people, not for profit.">
+    <meta property="og:url" content="https://echoir.fr">
+    <meta name="theme-color" content="#252525">
+    <link rel="icon" href="https://echoir.fr/shared/favicon-dark.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="https://echoir.fr/shared/favicon-light.png" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://echoir.fr/shared/styles.css">
+    <title>Echoir</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="https://echoir.fr/shared/echoir-logo.svg" alt="Echoir Logo"></div>
+        <div>
+            <!-- Just example Links -->
+            <a href="https://echoir.fr/">Home</a>
+            <a href="https://echoir.fr/about/">About</a>
+            <a href="https://echoir.fr/tos/">Terms of Service</a>
+            <a href="https://echoir.fr/privacy/">Privacy Policy</a>
+        </div>
+        <a href="https://echoir.fr/login/" class="login-button">Login</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const boxes = document.querySelectorAll('.box');
+            let fadeInStarted = false;
+
+            function checkFadeIn() {
+                const scrollY = window.scrollY + window.innerHeight;
+
+                boxes.forEach((box) => {
+                    if (!fadeInStarted && box.getBoundingClientRect().top < scrollY) {
+                        box.classList.add('visible');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', checkFadeIn);
+            checkFadeIn();
+        });
+    </script>
+</body>
 </html>
